@@ -6,6 +6,6 @@
 
 Демо: http://www.apelserg.ru/open-html5-games/game_tetr_plain/game_tetr_plain.htm
 
-Статья (Сила Canvas): http://habrahabr.ru/post//
+Статья (Сила Canvas): http://habrahabr.ru/post/259465/
 
 E-mail: apelserg@mail.ru
