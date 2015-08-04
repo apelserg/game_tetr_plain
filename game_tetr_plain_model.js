@@ -116,8 +116,8 @@ APELSERG.MODEL.GetBlockType = function() {
 // Сместить текущий блок по горизонтали
 //===
 APELSERG.MODEL.ShiftBlockColumn = function(block, num) {
-    for (var x = 0 in block.cells) {
-        for (var n = 0 in block.cells[x]) {
+    for (var x in block.cells) {
+        for (var n in block.cells[x]) {
             block.cells[x][n].Col = block.cells[x][n].Col + num;
         }
     }
@@ -127,8 +127,8 @@ APELSERG.MODEL.ShiftBlockColumn = function(block, num) {
 // Сместить текущий блок по вертикали
 //===
 APELSERG.MODEL.ShiftBlockRow = function(block, num) {
-    for (var x = 0 in block.cells) {
-        for (var n = 0 in block.cells[x]) {
+    for (var x in block.cells) {
+        for (var n in block.cells[x]) {
             block.cells[x][n].Row = block.cells[x][n].Row + num;
         }
     }
@@ -259,7 +259,7 @@ APELSERG.MODEL.CheckBlockCross = function(block) {
 
     //-- проверить границы колодца
     //--
-    for (var n = 0 in block.cells[block.idx]) {
+    for (var n in block.cells[block.idx]) {
         if (block.cells[block.idx][n].Col < 1 || block.cells[block.idx][n].Col > APELSERG.CONFIG.SET.WellColumn ||
             block.cells[block.idx][n].Row < 1 || block.cells[block.idx][n].Row > APELSERG.CONFIG.SET.WellRow) {
             canShift = false;
@@ -270,8 +270,8 @@ APELSERG.MODEL.CheckBlockCross = function(block) {
     //-- проверить границы пула
     //--
     if (canShift) {
-        for (var n = 0 in block.cells[block.idx]) {
-            for (var q = 0 in APELSERG.CONFIG.PROC.CellPool) {
+        for (var n in block.cells[block.idx]) {
+            for (var q in APELSERG.CONFIG.PROC.CellPool) {
                 var cell = APELSERG.CONFIG.PROC.CellPool[q];
                 if (block.cells[block.idx][n].Col == cell.Col && block.cells[block.idx][n].Row == cell.Row) {
                     canShift = false;
@@ -299,7 +299,7 @@ APELSERG.MODEL.DropBlockToPool = function() {
 
     //-- Перенести блок в пул колодца
     //--
-    for (var n = 0 in block.cells[block.idx]) {
+    for (var n in block.cells[block.idx]) {
         var cell = block.cells[block.idx][n];
         APELSERG.CONFIG.PROC.CellPool.push(new APELSERG.MODEL.Cell(cell.Row, cell.Col, cell.Color));
     }
@@ -322,7 +322,7 @@ APELSERG.MODEL.DropBlockToPool = function() {
 
             var numCol = 0;
 
-            for (var n = 0 in APELSERG.CONFIG.PROC.CellPool) {
+            for (var n in APELSERG.CONFIG.PROC.CellPool) {
                 if (APELSERG.CONFIG.PROC.CellPool[n].Row == currentRow) {
                     numCol++;
                 }
