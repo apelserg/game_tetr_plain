@@ -34,13 +34,13 @@ APELSERG.CANVA.WellRewrite = function (cellPool) {
 
     //-- Отрисовать падающий блок
     //--
-    for (var n = 0 in blockCurr.cells[blockCurr.idx]) {
+    for (var n in blockCurr.cells[blockCurr.idx]) {
         APELSERG.CANVA.CellRewrite(ctxTetr, blockCurr.cells[blockCurr.idx][n]);
     }
 
     //-- Отрисовать упавшие блоки
     //--
-    for (var n = 0 in cellPool) {
+    for (var n in cellPool) {
         APELSERG.CANVA.CellRewrite(ctxTetr, cellPool[n]);
     }
     
@@ -69,7 +69,7 @@ APELSERG.CANVA.WellRewrite = function (cellPool) {
         //-- Отрисовать следующий блок
         //--
         if (APELSERG.CONFIG.SET.ShowNextBlock) {
-            for (var n = 0 in blockNext.cells[blockNext.idx]) {
+            for (var n in blockNext.cells[blockNext.idx]) {
                 APELSERG.CANVA.CellRewrite(ctxInfo, blockNext.cells[blockNext.idx][n]);
             }
         }
